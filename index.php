@@ -1,0 +1,109 @@
+
+<html><head><title>Lorenzo Grassi</title>
+<style type="text/css">
+body{margin:50px 7%;border-width:0px;width:84%;height:100%;}
+.kop1{font-family:sans-serif;font-size:260%;color:#0707f7;}
+.kop2{font-family:sans-serif;font-size:125%;color:#0707f7;}
+.text{font-family:sans-serif;font-size:105%;text-align:justify;color:#666666;}
+.note{font-family:sans-serif;font-size:70%;color:#666666;}
+.highlight{font-family:sans-serif;color:#0707f7;}
+.redhighlight{font-family:sans-serif;color:#BC1919;}
+.hlink{font-family:sans-serif;color:#000090;}
+img{border:0;vertical-align:text-top;}
+a{color:inherit;text-decoration:inherit;}
+li{margin-bottom:5px;}
+.firstli{margin-top:5px;}
+.lispace{margin-bottom:15px;}
+.fulljustify {text-align:justify;}
+.fulljustify:after{content:"";display: inline-block;width: 90%;}
+</style>
+<link rel='stylesheet' id='fa_svg_with_js-css' href='fa-svg-with-js.css' type='text/css' media='all' />
+</head>
+<body>
+
+
+<div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<div style="float: left; width: 80%;" class="kop2 fulljustify">
+    <font color=000090>Home</font>    <a href="/cv.php" style="text-decoration:none"><font color=666666>CV</font></a>    <a href="/pubs.php" style="text-decoration:none"><font color=666666>Publications</font></a>    <a href="/activities.php" style="text-decoration:none"><font color=666666>Activities</font></a>    <a href="/teaching.php" style="text-decoration:none"><font color=666666>Teaching</font></a></div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<br style="clear: left;" />
+</div>
+
+<hr color="000090" size="1px">
+
+<br><table width=90% align=center><br>
+
+<!-- ########## START OF HOME ########## -->
+    
+    </table><br><table width=90% align=center>
+    <tr>
+
+        
+        <td class="text" valign=top>
+
+<font class="kop1">Lorenzo Grassi</font>
+
+<br><br>
+        <font class="text">
+            Lorenzo Grassi is an assistant professor in the <a class="hlink" href=https://cc.win.tue.nl/index.html>Coding Theory and Cryptology group</a> at the <a class="hlink" href=https://www.tue.nl/en/>Eindhoven University of Technology</a> in the <a class="hlink" href=https://www.tue.nl/en/our-university/departments/mathematics-and-computer-science>Department of Mathematics and Computer Science</a>, and a consultant at <a class="hlink" href=https://ponos.technology/>Ponos Technology</a>.<br><br>
+
+His research is supported by the <a class="hlink" href=https://erc.europa.eu/homepage>ERC Starting Grant</a> "SYMPZON - Getting SYMmetric CryPtography Out of its Comfort ZONe" (<a class="hlink" href=https://news.rub.de/english/press-releases/2024-09-05-erc-strating-grant-cryptography-future-applications>announcement</a>), starting in February 2025.<br><br>
+
+His research interests include all aspects of cryptology, with main focus on the design and cryptanalysis of symmetric cryptography primitives.
+        </font></td>
+ 
+<td width=450 align=right valign=top><br><img src="LGrassi.jpg" height=267px width=400px><br></td>
+
+   </tr>
+
+    </table>
+
+<br><table width=90% align=center>
+    
+ <tr><td class="kop2">Useful Links</td></tr>
+<tr><td class="text">
+    <ul>
+    <li class="firstli">
+        <a class="hlink" href=https://scholar.google.com/citations?user=bbbOVyMAAAAJ&hl=it>Google Scholar</a>
+    </li><li>
+        <a class="hlink" href=https://dblp.org/pid/166/8773-1.html>DBLP</a>
+    </li><li>
+        <a class="hlink" href=https://www.linkedin.com/in/lorenzo-grassi-20720092/>LinkedIn</a>
+    </li>
+    </ul></td></tr>
+
+
+
+    <tr><td class="kop2">Email</td></tr>
+    <tr><td class="text">
+    <ul>
+    <li class="firstli">
+        l.grassi (at) tue.nl
+    </li><li>
+        lorenzo (at) ponos.technology
+    </li>
+    </ul></td></tr>
+
+    <tr><td class="kop2">Office Address</td></tr>
+    <tr><td class="text">
+    <ul>
+    Groene Loper 5, <br>
+ 
+    5612 AE Eindhoven, The Netherlands<br>
+
+    MetaForum, room 5.071A
+    </ul><br></td></tr>
+<!-- ########## END OF HOME ########## -->
+</table><br>
+
+<hr color="000090" size="1px">
+
+<table width=100%><tr>
+<td class="note" align=left><a class="hlink" href=# style="text-decoration:none"><i class="fas fa-arrow-up" title="back to top"></i> back to top</a></td>
+<td class="note" align=right>Last modified: Aug 24, 2025</td></tr></table>
+
+<script src='fontawesome-all.js' id='fontawesome-js'></script>
+<script async data-id="101449728" src="//static.getclicky.com/js"></script>
+
+</body></html>

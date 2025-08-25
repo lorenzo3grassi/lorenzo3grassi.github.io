@@ -1,0 +1,111 @@
+<html><head><title>Lorenzo Grassi</title>
+<style type="text/css">
+body{margin:50px 7%;border-width:0px;width:84%;height:100%;}
+.kop1{font-family:sans-serif;font-size:260%;color:#0707f7;}
+.kop2{font-family:sans-serif;font-size:125%;color:#0707f7;}
+.text{font-family:sans-serif;font-size:105%;text-align:justify;color:#666666;}
+.note{font-family:sans-serif;font-size:70%;color:#666666;}
+.highlight{font-family:sans-serif;color:#0707f7;}
+.redhighlight{font-family:sans-serif;color:#BC1919;}
+.hlink{font-family:sans-serif;color:#000090;}
+img{border:0;vertical-align:text-top;}
+a{color:inherit;text-decoration:inherit;}
+li{margin-bottom:5px;}
+.firstli{margin-top:5px;}
+.lispace{margin-bottom:15px;}
+.fulljustify {text-align:justify;}
+.fulljustify:after{content:"";display: inline-block;width: 90%;}
+</style>
+<link rel='stylesheet' id='fa_svg_with_js-css' href='fa-svg-with-js.css' type='text/css' media='all' />
+</head>
+<body>
+
+
+
+<div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<div style="float: left; width: 80%;" class="kop2 fulljustify">
+    <a href="index.php" style="text-decoration:none"><font color=666666>Home</font></a>    <a href="/cv.php" style="text-decoration:none"><font color=666666>CV</font></a>    <a href="/pubs.php" style="text-decoration:none"><font color=666666>Publications</font></a>   
+   <a href="/activities.php" style="text-decoration:none"><font color=666666>Activities</font></a>
+ <font color=000090>Teaching</font> </div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<br style="clear: left;" />
+</div>
+
+
+<hr color="000090" size="1px">
+
+<br><table width=90% align=center><br>
+
+
+    <tr><td class="kop2">Courses</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        <a class="hlink" href="/teaching/CS25.php">Introduction to cryptology (2WF80)</a> (Lecturer), Bachelor's programme at <i>Eindhoven University of Technology</i> (Fall Semester - Q2, 2025/26) 
+    </li>
+    <li>
+        Symmetric Cryptanalysis (Teaching assistant), Master's programme at <i>Ruhr Bochum University</i> (Fall Semester, 2023/24)
+    </li>
+    <li>
+        Cryptology (Guest Lecture), Master's programme at  <i>Radboud University</i> (Fall Semester, 2022/23)
+    </li>
+    <li>
+        Computer Security (Teaching assistant), Bachelor's programme at  <i>Radboud University</i> (Fall Semester, 2022/23)
+    </li>
+    <li>
+        Applied Cryptography 1 (Co-lecturer), Master's programme at  <i>Graz University of Technology</i> (Fall Semester, 2019/20)
+    </li>
+     <li>
+        Applied Cryptography 2 (Co-lecturer), Master's programme at  <i>Graz University of Technology</i> (Spring Semester, 2018/19)
+    </li>
+<li>
+        Applied Cryptography 1 (Co-lecturer), Master's programme at  <i>Graz University of Technology</i> (Fall Semester, 2018/19)
+    </li>
+     <li>
+        Applied Cryptography 2 (Co-lecturer), Master's programme at  <i>Graz University of Technology</i> (Spring Semester, 2017/18)
+    </li>
+
+<li>
+        Applied Cryptography 1 (Co-lecturer), Master's programme at  <i>Graz University of Technology</i> (Fall Semester, 2017/18)
+    </li>
+     <li>
+        Applied Cryptography 2 (Co-lecturer), Master's programme at  <i>Graz University of Technology</i> (Spring Semester, 2016/17)
+    </li>
+    </ul></td></tr>
+
+<tr><td class="kop2">Master Thesis/Project</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        Quinn Ketelaars,  <i>Round-Level Gröbner Basis Attacks of Poseidon and Neptune</i>, Eindhoven University of Technology (in progress)
+    </li>
+   <li>
+        Bernhard Ablinger,  <i>Higher-Order Differential over GF(p)</i>, co-supervised with Prof. C. Rechberger, Graz University of Technology (2018/2019)
+    </li>
+	<li>
+        Matthias Niel,  <i>Mean and Variance Distinguishers for AES</i>, co-supervised with Prof. C. Rechberger, Graz University of Technology (2017/2018)
+    </li>
+    </ul></td></tr>
+
+<tr><td class="kop2">Bachelor Thesis/Project</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        Sjors Clabbers,  <i>Linear Cryptanalysis of round-reduced GIFT</i>, co-supervised with Prof. B. Mennink, Radboud University (2021/22)
+    </li>
+   <li>
+        Giulio Arrigoni,  <i>Analysis of 5- and 6-round AES</i>, co-supervised with Prof. C. Rechberger, Graz University of Technology (2019/2020)
+    </li>    </ul></td></tr>
+
+</table><br>
+
+<hr color="000090" size="1px">
+
+<table width=100%><tr>
+<td class="note" align=left><a class="hlink" href=# style="text-decoration:none"><i class="fas fa-arrow-up" title="back to top"></i> back to top</a></td>
+
+<script src='fontawesome-all.js' id='fontawesome-js'></script>
+<script async data-id="101449728" src="//static.getclicky.com/js"></script>
+
+</body></html>
+
+
+

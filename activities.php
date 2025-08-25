@@ -1,0 +1,110 @@
+<html><head><title>Lorenzo Grassi</title>
+<style type="text/css">
+body{margin:50px 7%;border-width:0px;width:84%;height:100%;}
+.kop1{font-family:sans-serif;font-size:260%;color:#0707f7;}
+.kop2{font-family:sans-serif;font-size:125%;color:#0707f7;}
+.text{font-family:sans-serif;font-size:105%;text-align:justify;color:#666666;}
+.note{font-family:sans-serif;font-size:70%;color:#666666;}
+.highlight{font-family:sans-serif;color:#0707f7;}
+.redhighlight{font-family:sans-serif;color:#BC1919;}
+.hlink{font-family:sans-serif;color:#000090;}
+img{border:0;vertical-align:text-top;}
+a{color:inherit;text-decoration:inherit;}
+li{margin-bottom:5px;}
+.firstli{margin-top:5px;}
+.lispace{margin-bottom:15px;}
+.fulljustify {text-align:justify;}
+.fulljustify:after{content:"";display: inline-block;width: 90%;}
+</style>
+<link rel='stylesheet' id='fa_svg_with_js-css' href='fa-svg-with-js.css' type='text/css' media='all' />
+</head>
+<body>
+
+
+
+<div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<div style="float: left; width: 80%;" class="kop2 fulljustify">
+    <a href="/index.php" style="text-decoration:none"><font color=666666>Home</font></a>    <a href="/cv.php" style="text-decoration:none"><font color=666666>CV</font></a>    <a href="/pubs.php" style="text-decoration:none"><font color=666666>Publications</font></a>    <font color=000090>Activities</font>    <a href="/teaching.php" style="text-decoration:none"><font color=666666>Teaching</font></a></div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<br style="clear: left;" />
+</div>
+
+<hr color="000090" size="1px">
+
+<br><table width=90% align=center><br>
+
+<!-- ########## START OF ACTIVITIES ########## -->
+    
+
+<tr><td class="kop2">PhD Student</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        <b> Berenika Richterová</b>, Eindhoven University of Technology (from 10/2025) <br>
+
+	Supported by the ERC starting grant 2024 "SYMPZON"
+    </li>
+</ul></td></tr>
+
+
+
+   <tr><td class="kop2">Program Committees</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        EUROCRYPT 2026
+    </li>
+    <li>
+        CRYPTO 2025
+   </li><li>
+        LightSEC 2025
+    </li>
+   <li>
+        CRYPTO 2024
+   </li>
+	<li>
+        EUROCRYPT 2024
+    </li>
+    <li>
+        ASIACRYPT 2023
+    </li><li>
+        Africacrypt 2023
+    </li><li>
+        Africacrypt 2022
+    </li>
+
+    </ul></td></tr>
+    <tr><td class="kop2">Editorial Boards</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        FSE/ToSC 2023/24
+    </li>
+<li>
+        FSE/ToSC  2022/23
+    </li>
+<li>
+        FSE/ToSC 2021/22
+    </li>
+
+    </ul></td></tr>
+
+    <tr><td class="kop2">Organization</td></tr><tr><td class="text">
+    <ul>
+    <li class="firstli">
+        Co-General Chair of <a class="hlink" href="https://fse.iacr.org/2025/">Fast Software Encryption (FSE) 2025</a>, <i>Rome, Italy</i> (March 2025)
+    </li><li>
+        Co-organizer of <a class="hlink" href="https://alpsy-workshop.github.io/alpsy24/">ALPSY 2024</a>, <i>Obergurgl, Austria</i> (January 2024)
+    </li>
+    </ul></td></tr>
+    
+<!-- ########## END OF ACTIVITIES ########## -->
+ </table><br>
+
+<hr color="000090" size="1px">
+
+<table width=100%><tr>
+<td class="note" align=left><a class="hlink" href=# style="text-decoration:none"><i class="fas fa-arrow-up" title="back to top"></i> back to top</a></td>
+
+<script src='fontawesome-all.js' id='fontawesome-js'></script>
+<script async data-id="101449728" src="//static.getclicky.com/js"></script>
+
+</body></html>
