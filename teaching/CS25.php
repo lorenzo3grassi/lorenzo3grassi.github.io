@@ -1,0 +1,417 @@
+<html><head><title>Lorenzo Grassi</title>
+<style type="text/css">
+body{margin:50px 7%;border-width:0px;width:84%;height:100%;}
+.kop1{font-family:sans-serif;font-size:185%;color:#0707f7;}
+.kop2{font-family:sans-serif;font-size:125%;color:#0707f7;}
+.text{font-family:sans-serif;font-size:105%;text-align:justify;color:#666666;}
+.note{font-family:sans-serif;font-size:70%;color:#666666;}
+.highlight{font-family:sans-serif;color:#0707f7;}
+.redhighlight{font-family:sans-serif;color:#BC1919;}
+.hlink{font-family:sans-serif;color:#000090;}
+img{border:0;vertical-align:text-top;}
+a{color:inherit;text-decoration:inherit;}
+li{margin-bottom:5px;}
+.firstli{margin-top:5px;}
+.lispace{margin-bottom:15px;}
+.fulljustify {text-align:justify;}
+.fulljustify:after{content:"";display: inline-block;width: 90%;}
+</style>
+<link rel='stylesheet' id='fa_svg_with_js-css' href='fa-svg-with-js.css' type='text/css' media='all' />
+</head>
+<body>
+
+
+
+<div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<div style="float: left; width: 80%;" class="kop2 fulljustify">
+    <a href="/index.php" style="text-decoration:none"><font color=666666>Home</font></a>    <a href="/cv.php" style="text-decoration:none"><font color=666666>CV</font></a>    <a href="/pubs.php" style="text-decoration:none"><font color=666666>Publications</font></a>   
+   <a href="/activities.php" style="text-decoration:none"><font color=666666>Activities</font></a>
+<a href="/teaching.php" style="text-decoration:none"><font color=000090>Teaching</font></a>
+ </div>
+<div style="float: left; width: 10%;">&nbsp;</div>
+<br style="clear: left;" />
+</div>
+
+
+<hr color="000090" size="1px">
+
+<br><table width=90% align=center><br>
+
+
+<tr align=center><td width=90% align=center><font class="kop1">Introduction to cryptology (2WF80) - Fall Semester 2025/2026</font></td></tr>
+
+
+<p><center><table width=100% h>
+<tr align=center>
+<br>
+<td><a class="hlink" href="#contents">Contents</a></td>
+<td><a class="hlink" href="#ann">Announcements</a></td>
+<td><a class="hlink" href="#exam">Exams</a></td>
+<td><a class="hlink" href="#bib">Literature</a></td>
+<td><a class="hlink" href="#video">Videos and slides</a></td>
+<td><a class="hlink" href="#old">Old exams</a> </td>
+<td><a class="hlink" href="#course">Course notes and exercise sheets</a></td>
+</tr>
+</table></center></P>
+
+<p>
+<br>
+<br>
+<b>Lorenzo Grassi</b><br>
+<a class="hlink" href=https://cc.win.tue.nl/index.html>Coding Theory and Cryptology group</a><br>
+<a class="hlink" href=https://www.tue.nl/en/our-university/departments/mathematics-and-computer-science>Department of Mathematics and Computer Science</a><br>
+<a class="hlink" href=https://www.tue.nl/en/>Eindhoven University of Technology</a> <br>
+MetaForum, room 5.071A <br><br>
+E-mail: l.grassi (at) tue.nl
+</p>
+
+
+<p>
+This page belongs to course 2MBD60 - Introduction to cryptology. 
+This course is offered at TU/e as part of the bachelor's elective 
+package 
+<a class="hlink" href="https://eipsi.win.tue.nl/security-package/">Security</a>
+and used to be called 2WF80 - Introduction to Cryptology. For the 2025/26
+edition there is no difference between the courses.
+
+<a name="contents"></a>
+<p>
+<b>Contents</b><br> 
+<ul>
+<li> Introduction to symmetric cryptography, public-key cryptography, and digital signature schemes </li>
+<li> Classical ciphers (Caesar cipher, Vigenère, Playfair, rotor machines, ...) </li>
+<li> Shift Register Sequences and RC4 </li>
+<li> Block cipher DES and mode of operations (ECB, CBC, ...)</li>
+<li> Hash functions and Message Authentication Code (MAC) </li>
+<li> RSA encryption and signature</li>
+<li> Diffie-Hellman key exchange </li>
+<li> ElGamal encryption and signature</li>
+<li> Cryptanalysis by using statistics, factorization, ... </li>
+<li> Secret sharing </li>
+</ul>
+</p>
+
+<p>
+Some words up front: Crypto is an exciting area of research. Learning
+crypto makes you more aware of the limitations of security and privacy 
+which might make you feel <i>less</i> secure but that's just a more 
+accurate impression of reality and it a good step to improve your
+security.<br>
+</p>
+
+
+<a name="ann"></a> <h4> Announcements</h4>
+<p>
+If you study mathematics, you should have participated in "2WF50 - Algebra" 
+and "2WF70 - Algorithmic algebra and number theory".<br>
+If you study computer science or any other program you should have
+participated in "2DBI00 - Linear Algebra and Applications",
+"2IT50 or 2IT80 - Discrete structures", and
+"2WF90 - Algebra
+for security" before taking this course.<br>
+
+If not, you can find some material in the <a class="hlink" href="#bib">Literature</a> section,
+but note that you are on your own for learning this.
+</p>
+
+<p>
+Lectures take place on Monday (block 3 and 4) 
+and on Thursday (block 7 and 8). 
+Instruction sessions take place on Thursday (block 5 and 6).
+<!-- Because more students signed up than the schedulers
+assumed we have a bit of an odd mix of lecture rooms, please check the online
+calendar. -->
+<!--
+We have three locations for the instruction sessions (Thu block 5 and 6),
+ namely Luna 1.240, and Altas 4.215 (except for Nov 16 when it is Atlas
+-1.820); 
+please join the room that's emptier. We might reduce to two rooms if not enough
+students show up, but . --> I really recommend doing the instruction sessions and
+attending them live if you can fit them in your agenda. They are more important
+than the lecture, and thus get the prime spot. We'll have enough instructors in
+the rooms so that you can ask your questions and check the answers to your
+exercises with them. We will not hand out solutions.
+<!--In 2020 and 2021 the course has been
+running online with short videos &ndash; one video per topic,
+so several videos per unit. 
+This year two of the Monday lectures will be streamed and recorded because we
+couldn't get a big enough room, but most lectures happen only in person.-->
+</p>
+<p>
+The teaching assistants/instructors for this course are the following 6 people. (<b>TO BE CONFIRMED!</b>)
+<ul>
+<li>Sebastiano Boscardin, s.boscardin (at) tue.nl, <a class="hlink"
+href="/teaching/PK/Boscardin-publicKey.asc">PGP key</a>
+</li>
+
+<li>Emanuele Di Giandomenico, e.di.giandomenico (at) tue.nl, <a class="hlink" href="/teaching/PK/Di-Giandomenico-publicKey.asc">PGP key</a>
+</li>
+
+<!-- <li>Jonathan Levin (grading only), jl_crypto_course (at) riseup.net,
+<a href="../PK/jonathan-levin.asc">PGP key</a>
+</li> 
+
+<li>Alex Pellegrini, a.pellegrini (at) tue.nl,
+<a href="../CS24/alex-pellegrini-0x888C5F23_public.asc">
+PGP key</a>
+</li> -->
+
+<li> Matthias Meijers, teaching (at) mmeijers.com,
+PGP key
+</li>
+
+<li> Berenika Richterová, ??? (at) tue.nl,
+PGP key
+</li>
+
+<li>Abishanka Saha, a.saha1 (at) tue.nl, <a class="hlink" href="/teaching/PK/Saha-publicKey.asc">PGP key</a>
+</li>
+
+<!-- <li>Luc Steenbakkers, l.g.a.m.steenbakkers (at) student.tue.nl.  
+<a href="../CS24/luc-steenbakkers-0xADD5B01B_public_key.asc">
+PGP key</a>
+</li> -->
+
+<li>Tianxin Tang, t.tang2 (at) tue.nl, <a class="hlink"
+href="/teaching/PK/Tang-publicKey.asc">PGP key</a>
+</li>
+
+</ul>
+Please always inlcude all 6 of them when you send in your homeworks - and make
+sure that you encrypt to all 6 of them and to your team mates. (Please, do <b>not</b> send your homeworks to Prof. Lorenzo Grassi.) All email
+systems that I know of will do this automatically if you have all keys in your
+address book and the people in the To or Cc field your email.
+The teaching assistants from 2023 wrote
+<a class="hlink"
+href="/teaching/PK/Guide-to-Homework-submission-Introduction-to-Cryptology.pdf">this
+guide</a> to homework submission for this course.<br>
+</p>
+
+<p><i> Note:</i> there will be <u> <b>no</b> lecture on Monday January 5, 2026</u>.</p>
+
+<a name="bib"></a> <h4>Literature and software</h4> 
+<p>
+It is <i>not</i> necessary to purchase any book to follow the course. 
+</p>
+
+<p>
+For some background on algebra see
+<ul>
+<li>Tanja Lange <a href="../cryptoI13/nt.pdf">"Number Theory and Algebra"</a> (
+Chapter of draft book "Discrete Mathematics").</li>
+<li>Tanja Lange <a href="../CCI11/online-ff.pdf">"Finite Fields"</a> (Chapter of draft book "Discrete Mathematics").</li>
+</ul>
+
+Some nice books on crypto (but going beyond what we need for this course) are
+<ul>
+<li>
+Jean-Philippe Aumasson
+"Serious Cryptography", No Starch Press, 2017.
+</li>
+<li>
+Johannes Buchmann "Introduction to Cryptography", Springer, 2004.
+</li>
+<li>
+Neal Koblitz "A course in Number Theory and Cryptography", 
+Springer, 1994.
+</li>
+<li>
+Rudolf Lidl and Harald Niederreiter "Introduction to Finite Fields and
+their Applications", Cambridge University Press, 1994.
+</li>
+<li>
+Christof Paar and Jan Pelzl <a class="hlink"
+ href="http://www.crypto-textbook.com/">"Understanding Cryptography"</a>, Springer, 2010.
+</li>
+<li>
+Doug Stinson "Cryptography: Theory and Practice", CRC Press, 1995.
+</li>
+<li>
+Henk van Tilborg <a href="../cryptoI13/cryptodict.pdf">"Fundamentals
+of Cryptology"</a> Kluwer academic Publishers, Boston, 2000.</li>
+
+</ul>
+
+<p>
+For easy prototyping of crypto implementations, I suggest the computer algebra system <a class="hlink"
+ href="http://sagemath.org/">Sage</a>. It is based on
+python and you can use it online or install it on your computer (in a
+virtual box in case you're running windows). See this <a class="hlink"
+ href="https://www.youtube-nocookie.com/embed/92qhT8BAdRk">video</a> for a demonstration on how to use Sage <a class="hlink"
+ href="https://www.sagemath.org/">https://www.sagemath.org/</a> (by Prof. Tanja Lange - it also covers basics of finite fields and
+elliptic curves). Prof. Tanja Lange also wrote a short ``cheat sheet'' with commands for Sage, 
+see <a class="hlink"
+href="/teaching/sage-ref.pdf">here</a>.
+</p>
+
+<p>For encrypting your homeworks you should use GPG/PGP. If you're
+running Linux then GNU uPG is easy to install. 
+<a class="hlink" href="https://mailvelope.com/en'>https://mailvelope.com/en</a> is a browser
+plugin for using PGP gor web-based mails. If you're using windows you can use
+<a class="hlink" href="http://www.gpg4win.org/">GPG4win</a>; if
+you're using MAC-OS you can use <a class="hlink" href="https://gpgtools.org/">GPG
+Suite</a> (though I'm getting reports that they changed their system and now
+charge for the full version, the command-line linux version works for sure).<br>
+Thunderbird has good integration and I hear that also outlook can
+work well with the plugins.</p>
+
+<p>
+Please always inlcude all 6 of them when you send in your homeworks - and make
+sure that you encrypt to all 6 of them and to your team mates. (Please, do <b>not</b> send your homeworks to Prof. Lorenzo Grassi.) All email
+systems that I know of will do this automatically if you have all keys in your
+address book and the people in the To or Cc field your email. The teaching assistants from 2023 wrote
+<a class="hlink"
+href="/teaching/PK/Guide-to-Homework-submission-Introduction-to-Cryptology.pdf">this
+guide</a> to homework submission for this course.<br>
+
+If absolutely not possible otherwise, we are OK with having only the attachment being  
+encrypted and signed, but prefer proper encryption of the whole email. If you
+end up going for file encryption only you must ensure that all receipients can
+decrypt and you're missing out on the support that the email system offers you.
+</p>
+
+<a name="exam"></a>
+<h4>Examination</h4>
+<p>
+30% of the grade is determined by homeworks. There will be six
+sets of homework during the quarter. You should hand in your homework
+in groups of 3 or 4. To make sure that you get used to crypto we require
+solutions to be sent encrypted and signed with GPG/PGP. Each participant must
+have communicated with the TAs at least once using GPG/PGP.
+You can find the keys for the TAs linked above.<br>
+</p>
+
+<p>
+Date of the Exam: to be announced.
+</p>
+
+<a name="video"></a> <h4>Videos and slides</h4> 
+<p>
+For 2022 and 2023 the lectures were recorded 
+and posted at 
+<a class="hlink"
+href="https://tue.video.yuja.com/P/VideoManagement/MediaLibrary/search?query=(2WF80)">TU/e's
+Yuja site</a>. Search for course code 2WF80 (the old name of this course) to
+see the recordings. Courses from Prof. Tanja Lange are the 2022/23 and 2023/24 versions, not the 2018/19
+version which for some reason laods with preview. Click on the three vertical
+dots on the right end of the course to select "open" and get to the videos.
+<br>
+For the 2020 and 2021 editions of the course, Prof. Tanja Lange recorded a lot of short videos
+which you can find on the <a class="hlink"
+href=https://www.youtube.com/channel/UC6crzceuaPCsST472Z_hT3Q?pbjreload=102">YouTube
+Channel</a> which are better for self study or if you want a more direct way to
+look up a subject.
+The 
+<a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS21/>course page for 2021</a> has short descriptions of all videos, slides,
+ and no-cookie links to the YouTube videos. 
+</p>
+
+
+
+
+
+<a name="old"></a>
+<h4>Old Exams</h4>
+<p>
+This course was given for the first time in Q2 of 2014. Old exams are listed here.</p>
+
+<ul>
+<li>
+Exam from April 2025 <a class="hlink" href="/teaching/Exams/4_2025.pdf">here</A>.
+</li>
+<li>
+Exam from 03 February 2025: <a class="hlink" href="/teaching/Exams/2_2025.pdf">here</A>.
+</li>
+<li>
+Exam from April 2024 <a class="hlink" href="/teaching/Exams/4_2024.pdf">here</A>.
+</li>
+<li>
+Exam from 22 January 2024: <a class="hlink" href="/teaching/Exams/1_2024.pdf">here</A>.
+</li>
+<li>
+Exam from April 2023 <a class="hlink" href="/teaching/Exams/4_2023.pdf">here</A>.
+</li>
+<li>
+Exam from 23 January 2023: <a class="hlink" href="/teaching/Exams/1_2023.pdf">here</A>.
+</li>
+<li> 
+Exam from April 2022: <a class="hlink" href="/teaching/Exams/4_2022.pdf">here</A>.
+<li>
+Exam from 24 January 2022: <a class="hlink" href="/teaching/Exams/1_2022.pdf">here</A>.<br>
+Printing from Ans deleted the pictures. Here are
+the <a class="hlink" href="/teaching/Exams/pcbc-mac.jpg">PCBC MAC</a> and
+two examples of modes
+<a class="hlink" href="/teaching/Exams/cfb-cbc.jpg">CFB|CBC</a>
+and
+<a class="hlink" href="/teaching/Exams/cbc-cbc.jpg">CBC|CBC</a>.
+</li>
+<li>
+Exam from April 2021: <a class="hlink" href="/teaching/Exams/4_2021.pdf">here</A>.<br>
+Printing from Ans deleted the pictures. Here are
+the <a class="hlink" href="/teaching/Exams/simple-mac.jpg">simple MAC</a> and
+two examples of modes
+<a class="hlink" href="/teaching/Exams/crt-cbc.jpg">CRT|CBC</a>
+and
+<a class="hlink" href="/teaching/Exams/ofb-cbc.jpg">OFB|CBC</a>.
+</li>
+
+<li>
+Exam from 25 January 2021: <a class="hlink" href="/teaching/Exams/1_2021.pdf">here</A>.<br>
+Printing from Ans deleted the pictures. Here are
+the <a class="hlink" href="/teaching/Exams/lfsr.jpg">LFSR schematic</a> and the
+<a class="hlink" href="/teaching/Exams/charlie-mac.jpg">MAC from exercise </a>.
+</li>
+
+
+<li>
+Exam from 27 January 2020: <a class="hlink" href="/teaching/Exams/1_2020.pdf">here</A>.
+</li>
+<li>
+Exam from 22 January 2018:  <a class="hlink" href="/teaching/Exams/1_2018.pdf">here</A>.
+<br>
+Note that in the text of exercise 6 the equation for S_1 should use O_1, not O_i.
+</li>
+<li>
+Exam from 19 January 2017:  <a class="hlink" href="/teaching/Exams/1_2017.pdf">here</A>.
+</li>
+<li>
+Exam from 18 January 2016:  <a class="hlink" href="/teaching/Exams/1_2016.pdf">here</A>.
+</li>
+<li>
+Exam from 19 January 2015:  <a class="hlink" href="/teaching/Exams/1_2015.pdf">here</A>. 
+</li>
+<li>
+Practice exam 2014/2015: <a class="hlink" href="/teaching/Exams/2014_2015.pdf">here</A>.<br>
+Note: the exercise about breaking RSA when all recipients have
+the same exponent and get the same message has too large numbers
+for your calculator.
+</li>
+</ul>
+
+<hr>
+
+<a name="course"></a> <h4>Class notes and exercise sheets</h4> 
+
+<p>
+This section is extended through the course with notes of what
+happened in class and links to blackboard pictures. You can also find here the
+exercise sheets for the sessions on Thursdays.
+</p>
+
+
+
+</table><br>
+
+<hr color="000090" size="1px">
+
+<table width=100%><tr>
+<td class="note" align=left><a class="hlink" href=# style="text-decoration:none"><i class="fas fa-arrow-up" title="back to top"></i> back to top</a></td>
+
+<script src='fontawesome-all.js' id='fontawesome-js'></script>
+<script async data-id="101449728" src="//static.getclicky.com/js"></script>
+
+</body></html>
+
+
+
