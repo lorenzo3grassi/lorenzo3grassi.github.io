@@ -475,10 +475,13 @@ happened in class.
 	&nbsp #Type of attacks: <br>
 	&nbsp&nbsp- key-recovery;<br>
 	&nbsp&nbsp- plaintext-recovery;<br>
-	&nbsp&nbsp- recovery some bits of the plaintext -> secret-key distinguishers (Random Oracle instantiated via a Pseudo-Random Permutation vs RO 	instantiated via the cipher + secret key?).<br>
+	&nbsp&nbsp- recovery some bits of the plaintext ->  <a class="hlink"
+ href="https://en.wikipedia.org/wiki/Distinguishing_attack">secret-key distinguishers</a> (distinguishing between a Pseudo-Random Permutation (PRP) and a cipher instantiated via a secret key - see also <a class="hlink"
+href="/teaching/secretKeyDistinguisher.pdf">here</a>).<br>
 	&nbsp#Attack scenario:<br>
 	&nbsp&nbsp- ciphertext only attack;<br>
-	&nbsp&nbsp- known plaintexts/ciphertexts attack (example: car + key car);<br>
+	&nbsp&nbsp- known plaintexts/ciphertexts attack (example: <a class="hlink"
+href="/teaching/example.pdf">car + car key</a>);<br>
 	&nbsp&nbsp- chosen plaintexts/ciphertexts attack (CPA/CCA).<br>
 
 	Definition of public-key cryptography. <br>
@@ -487,7 +490,7 @@ happened in class.
 	&nbsp#Type of attacks: <br>
 	&nbsp&nbsp- (secret-)key-recovery;<br>
 	&nbsp&nbsp- plaintext-recovery;<br>
-	&nbsp&nbsp- recovery some bits of the plaintext -> IND-CPA, IND-CCA1, IND-CCA2 distinguishers. <br>
+	&nbsp&nbsp- recovery some bits of the plaintext -> <a class="hlink" href=https://en.wikipedia.org/wiki/Ciphertext_indistinguishability>IND-CPA, IND-CCA1, IND-CCA2 distinguishers</a>. <br>
 	<br>
 
 	Additional material (slides by prof. Tanja Lange):
