@@ -477,24 +477,30 @@ happened in class.
 
 	Cryptanalysis of symmetric-key schemes. <br>
 	&nbsp #Type of attacks: <br>
-	&nbsp&nbsp- key-recovery;<br>
-	&nbsp&nbsp- plaintext-recovery;<br>
-	&nbsp&nbsp- recovery some bits of the plaintext ->  <a class="hlink"
+	<ul>
+	<li> key-recovery;</li>
+	<li> plaintext-recovery;</li>
+	<li> recovery some bits of the plaintext ->  <a class="hlink"
  href="https://en.wikipedia.org/wiki/Distinguishing_attack">secret-key distinguishers</a> (distinguishing between a Pseudo-Random Permutation (PRP) and a cipher instantiated via a secret key - see also <a class="hlink"
-href="/teaching/secretKeyDistinguisher.pdf">here</a>).<br>
-	&nbsp#Attack scenario:<br>
-	&nbsp&nbsp- ciphertext only attack;<br>
-	&nbsp&nbsp- <a class="hlink" href="https://en.wikipedia.org/wiki/Known-plaintext_attack">known plaintexts/ciphertexts attack</a> (example: <a class="hlink"
-href="/teaching/example.pdf">car + car key</a>);<br>
-	&nbsp&nbsp- <a class="hlink" href="https://en.wikipedia.org/wiki/Chosen-plaintext_attack">chosen plaintexts (or ciphertexts) attack</a> (CPA/CCA).<br>
-
+href="/teaching/secretKeyDistinguisher.pdf">here</a>).
+	</li>
+	</ul>
+	&nbsp#Attack scenario:
+	<ul>
+	<li> ciphertext only attack;</li>
+	<li> <a class="hlink" href="https://en.wikipedia.org/wiki/Known-plaintext_attack">known plaintexts/ciphertexts attack</a> (example: <a class="hlink"
+href="/teaching/example.pdf">car + car key</a>);</li>
+	<li> <a class="hlink" href="https://en.wikipedia.org/wiki/Chosen-plaintext_attack">chosen plaintexts (or ciphertexts) attack</a> (CPA/CCA).</li>
+	</ul>
 	Definition of public-key cryptography. <br>
 
 	Cryptanalysis of public-key schemes. <br>
-	&nbsp#Type of attacks: <br>
-	&nbsp&nbsp- (secret-)key-recovery;<br>
-	&nbsp&nbsp- plaintext-recovery;<br>
-	&nbsp&nbsp- recovery some bits of the plaintext -> <a class="hlink" href=https://en.wikipedia.org/wiki/Ciphertext_indistinguishability>IND-CPA, IND-CCA1, IND-CCA2 distinguishers</a>. <br>
+	&nbsp #Type of attacks:
+	<ul>
+	<li> (secret-)key-recovery;</li>
+	<li> plaintext-recovery;</li>
+	<li> recovery some bits of the plaintext -> <a class="hlink" href=https://en.wikipedia.org/wiki/Ciphertext_indistinguishability>IND-CPA, IND-CCA1, IND-CCA2 distinguishers</a>. </li>
+	</ul>
 	<br>
 
 	Additional material (slides by prof. Tanja Lange):
@@ -507,10 +513,12 @@ href="/teaching/example.pdf">car + car key</a>);<br>
 
 <li>
 <b> 13 Nov 2025:</b> Definition of digital signature schemes. <br>
-&nbsp#Type of attacks: <br>
-	&nbsp&nbsp- (secret-)key-recovery;<br>
-	&nbsp&nbsp- universal forgery;<br>
-	&nbsp&nbsp- existential forgery.<br>
+&nbsp#Type of attacks: 
+	<ul>
+	<li> (secret-)key-recovery;</li>
+	<li> universal forgery;</li>
+	<li> existential forgery.</li>
+	</ul>
 
 Historical ciphers:
 <ul>
@@ -532,14 +540,72 @@ Historical ciphers:
 
 <br>
 
-<a class="hlink" href="/teaching/slides.pdf">Slides</a> about E.S.H.A. Trojan.
+<a class="hlink" href="/teaching/slides.pdf">Slides</a> about E.S.H.A. Trojan.<br>
+
+
+<br>
+
+<li>
+<b> 17 Nov 2025:</b> Shannon's Principle (<a class="hlink" href=https://en.wikipedia.org/wiki/Confusion_and_diffusion>Confusion + Diffusion</a>). <br>
+
+Enigma: <a class="hlink" href=https://web.stanford.edu/class/cs106j/handouts/36-TheEnigmaMachine.pdf>details</a> and size of the key = number of combinations (see <a class="hlink" href=https://crypto.stackexchange.com/questions/83417/enigma-how-many-possibilities-does-the-plugboard-have>explanation</a> for plugboard with 10 cables).<br>
+
+One-time pad (or Vernam cipher) as example of *stream cipher*.<br>
+
+Pseudo-Random Number Generator (PRNG): 
+<ul>
+<li> use in crypto: <a class="hlink" href="/teaching/prng.pdf">relation</a> with Vernam cipher</li>
+<li> example of PRNG in C/C++: x_{i+1} = a * x_i + b mod q, where q = 2^32, a = 1103515245, b = 12345 (and x_0 being the seed).</li>
+</ul>
+
+
+How to instantatiate a PRNG? (Linear) Feedback-Shift Register ((L)FSR): 
+	<ul>
+	<li> Definition, and possible settings (for simplicity, we omit the initial value IV in the lecture):
+	</li>
+	<ul>
+		<li> Updating function F = secret, and initial state s_0, s_1, ..., s_{n-1} = public (for example, IV instantiates  the initial state), or 	</li>
+	<li> Updating function F = public, and initial state s_0, s_1, ..., s_{n-1} = secret (for example, part of the initial state can be instantiated via IV). 	</li>
+	</ul>
+	<li> Example over Z_2: F(x_0, x_1, x_2) = x_0 + x_1 * x_2 + 1 mod 2. Possible periods: 1 (if initial state is 111), 2 if initial state is (101), and 5 if initial state is (001). Not surprising, as there at most 2^3 = 8 states, and 1+2+5=8. </li>
+	<li> How to draw a LFSR + Relation with the characteristic polynomial F(x_0, x_1, ..., x_{n-1}) = sum_{i=0}^{n-1} c_i * x_i over Z_2 (for c_i in {0,1}).
+	<li> Definition of period and divisibility property.
+	<li> The periods depends both on the details F and on the initial state: what is the longest possible period? Answer (and more examples) in the next lectures!
+	</ul>
+
+</li>
+
+
+
+<br>
+
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201116-fsr.pdf>Feedback shift registers</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201116-lfsr-1.pdf>Linear feedback shift registers</a></li>
+	</ul>
 
 <br>
 
 
-
-
 </li>
+
+
+
+
+<li>
+<b> 20 Nov 2025:</b> (to appear)
+
+<br>
+
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201116-lfsr-2.pdf>LFSRs: matrix and characteristic polynomial</a></li>
+	</ul>
+
+<br>
+
 
 </ul>
 
