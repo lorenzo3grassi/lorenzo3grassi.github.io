@@ -565,10 +565,10 @@ How to instantatiate a PRNG? (Linear) Feedback-Shift Register ((L)FSR):
 	</li>
 	<ul>
 		<li> Updating function F = secret, and initial state s_0, s_1, ..., s_{n-1} = public (for example, IV instantiates  the initial state), or 	</li>
-	<li> Updating function F = public, and initial state s_0, s_1, ..., s_{n-1} = secret (for example, part of the initial state can be instantiated via IV). 	</li>
+	<li> Updating function F = public, and initial state s_0, s_1, ..., s_{n-1} = secret (it is possible to reserve part of the initial state to the IV). 	</li>
 	</ul>
 	<li> Example over Z_2: F(x_0, x_1, x_2) = x_0 + x_1 * x_2 + 1 mod 2. Possible periods: 1 (if initial state is 111), 2 if initial state is (101), and 5 if initial state is (001). Not surprising, as there at most 2^3 = 8 states, and 1+2+5=8. </li>
-	<li> How to draw a LFSR + Relation with the characteristic polynomial F(x_0, x_1, ..., x_{n-1}) = sum_{i=0}^{n-1} c_i * x_i over Z_2 (for c_i in {0,1}).
+	<li> How to draw a LFSR defined by F(x_0, x_1, ..., x_{n-1}) = sum_{i=0}^{n-1} c_i * x_i over Z_2 (for c_i in {0,1}).
 	<li> Definition of period and divisibility property.
 	<li> The periods depends both on the details F and on the initial state: what is the longest possible period? Answer (and more examples) in the next lectures!
 	</ul>
