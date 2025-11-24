@@ -581,6 +581,7 @@ How to instantatiate a PRNG? (Linear) Feedback-Shift Register ((L)FSR):
 
 	Additional material (slides by prof. Tanja Lange):
 	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201112-stream-I.pdf>Stream ciphers: definition and IV</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201116-fsr.pdf>Feedback shift registers</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201116-lfsr-1.pdf>Linear feedback shift registers</a></li>
 	</ul>
@@ -609,24 +610,12 @@ Theorem (with proof): Let Ord(C)=k for C being the state update matrix of an LFS
 	<li> As we saw in the class, we have S_{n,n} = S_{n,n} * C^r, which implies C^r = I;</li>
 	<li> It follows that the order of C is r < k, which contradicts the assumption (Ord(C) = k). Hence, the claim. </li>
 </ul>
-&nbsp <i> Sorry for my mistake. </i> (Note that you can find the proof also in the slides of prof. Tanja Lange.) <br>
+&nbsp (Note that you can find the proof also in the slides of prof. Tanja Lange.) <br>
 
 Characteristic polynomial defined as P(x) = det(x * I - C), and equal to P(x) = x^n - sum_{i=0}^{n-1} c_i * x^i (note that + and - are the same modulo 2). Ord(P) defined as smallest k > 1 s.t. x^k = 1 mod P(x).
 Ord(P) >= deg(P). As Ord(P) = Ord(C), we will use the polynomial P instead of C as it is easier to handle. <br>
 
 Based on "Rabin's Irreducible Test", if P irreducible, then Ord(P) divides 2^n - 1 (where n = deg(P)). It follows that if P is irreducible and 2^n - 1 is prime, then Ord(P) = 2^n - 1 (which implies the periods are only 1 or 2^n-1).<br>
-
-<!--
-
-Theorem (no proof): If P irreducible, then all non-zero starting states have the same period.
-
-
-Sum of LFSRs. Hyphotesis (to verify in the next lecture!):
-<ul>
-	<li> sum of two LFSRs with period p and r -> period lcm(p,r).</li>
-	<li> gcd(p,r) sequences of period lcm(p,r) + sequences of period p, r, 1.</li>
-</ul>
--->
 
 
 <br>
@@ -645,8 +634,28 @@ Sum of LFSRs. Hyphotesis (to verify in the next lecture!):
 
 
 <li>
-<b> 24 Nov 2025:</b> (to appear!) <br>
+<b> 24 Nov 2025:</b> Theorem (with proof): If P irreducible, then all non-zero starting states have the same period.  <br>
 
+
+Sum of LFSRs:
+<ul>
+	<li> sum of two LFSRs with period p and r -> period lcm(p,r).</li>
+	<li> gcd(p,r) sequences of period lcm(p,r) + sequences of period p, r, 1.</li>
+</ul>
+ 
+Definition of reciprocal polynomial F^\star(x): if F(0)!=0 -> deg(F)=deg(F^\star), (F*G)^\star = F^\star * G^\star, F irreducible <-> F^\star irreducible, lcm(F^\star, G^\star) = (lcm(F, G))^\star. <br>
+
+Definition of generating function S(x): 2^n generating functions for an LFSR of state size n; if period r: S(x) = (sum_{i=0}^{r-1} s_i * x^i) / (x^r + 1). <br>
+
+Proposition (with proof): let S(x) be the generating function of an LFSR with characteristic polynomial P(x) = x^n + sum_{i=0}^{n-1} c_i * x^i. Then: deg(S(x) * P^\star(x)) < n. <br>
+
+Proposition (no proof): let F(x) be a function of degree striclty less than n. Let P(x) be P(x) = x^n + sum_{i=0}^{n-1} c_i * x^i. Then, S(x) = F(x)/P^\star(x) is the generating function of an LFSR of period n satisfying s_{j+n} <- sum_{i=0}^{n-1} c_i * s_{j+i}. <br>
+
+Theorem (proof in progress): Let {s_i}_i and {t_i}_i be two output sequences of two LFSRs with characterestic polynomials P(x) and Q(x). Then, there exists an LFSR with output matching {s_i + t_i}_i and characterestic polynomials lcm{P(x), Q(x)}. <br>
+&nbsp <i> @Note: on the blackboard, I wrote R(x) = A(x) * F(x) = B(x) * G(x). This is wrong.</i> <br>
+&nbsp Correct one is: R^\star(x) = A(x) * P^\star(x) = B(x) * Q ^\star(x).<br>
+&nbsp Indeed: F(x)/P^\star(x) -> F(x)/P^\star(x) * lcm{P^\star(x), Q^\star(x)}/lcm{P^\star(x), Q^\star(x)} = A(x) * F(x) / lcm{...}.
+<br>
 
 <br>
 	Additional material (slides by prof. Tanja Lange):
@@ -655,6 +664,23 @@ Sum of LFSRs. Hyphotesis (to verify in the next lecture!):
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201123-lfsr-5.pdf>LFSRs: Math vs. mystery</a></li>
 	</ul>
 <br>
+
+</li>
+
+
+<li>
+<b> 27 Nov 2025:</b> (to appear!)
+
+<br>
+
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201123-lfsr-6.pdf>Practical use of LFSRs</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201126-stream-2.pdf>Stream ciphers: RC4 and others</a></li>
+	</ul>
+<br>
+
 
 </li>
 
