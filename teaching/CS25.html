@@ -669,8 +669,22 @@ Theorem (proof in progress): Let {s_i}_i and {t_i}_i be two output sequences of 
 
 
 <li>
-<b> 27 Nov 2025:</b> (to appear!)
+<b> 27 Nov 2025:</b> Proof of Theorem about sum of LFSRs (from previous lecture). <br>
 
+Re-visiting the "odd" example where we added two sequences and got a period that was shorter than the input. <br>
+
+Summary on how to analyze a generic LFSR: (1) decompose its polynomial characterestic P(x) = prod_i (P_i(x))^{e_i} so that P_i are irreducible; (2) analyze (P_i(x))^{e_i} (compute periods); (3) combine periods, taking care of offsets to get all periods. See e.g. <a class="hlink" href=https://math.stackexchange.com/questions/878692/sequences-length-for-lfsr-in-the-general-case>here</a> (end of the page - f(x)=(1+x+x^2)*(1+x+x^3)*(1+x+x^4)^2) for a concrete example (many results in this webpage are not part of the course, and are not requested during the exam - just look at the example, where you can brute force the sequences/periods of (1+x+x^4)^2). <br>
+
+Three stream ciphers (based on non-linear FSRs) for telecommunication:
+<ul>
+	<li> A5/1 and A5/2. Both broken (links for more details in the slide); </li>
+	<li> SNOW-3G. </li>
+</ul>
+
+One extra stream cipher: RC4. Attack/Distinguisher on the 2nd output byte. Additional observations on RC4.
+<br><br>
+
+Just for your knowledge: better stream ciphers exist! See the final portfolio from the <a class="hlink" href=https://competitions.cr.yp.to/estream.html> eSTREAM competition</a> (example: <a class="hlink" href=https://en.wikipedia.org/wiki/Salsa20>Salsa20</a>).
 <br>
 
 <br>
@@ -683,6 +697,58 @@ Theorem (proof in progress): Let {s_i}_i and {t_i}_i be two output sequences of 
 
 
 </li>
+
+
+<li>
+<b> 1 Dec 2025:</b> (to appear!)
+
+<!--
+Problem: stream ciphers do not provide authentication and integrity! <br>
+
+Solution: Message Authentication Codes (MACs). <br>
+
+In order to instantiate a MAC, we need a hash function, that is, a hash function that takes inputs of arbitray size, and returns outputs of fixed size, such that it is easy/fast to compute, but hard to invert. In particular, a hash function should guarantee:
+<ul>
+	<li> pre-image and second pre-image resistance;</li>
+	<li> collision resistance.</li>
+</ul>
+A hash function that returns n bits can guarantee at most 2^n bits of security for (second) pre-image resistance and 2^{n/2} bits of security for collision resistance (due to the birthday paradox). <br>
+
+Merkle-Damgaard construction for setting up secure hash functions. Compression function {0,1}^{2n} -> {0,1}^n set up via e.g.:
+<ul>
+	<li> truncated permutation Trun(P(.)), where Trunc: {0,1}^{2n} -> {0,1}^n returns half of the input bits;</li>
+	<li> cipher (see <a class="hlink" href=https://en.wikipedia.org/wiki/One-way_compression_function>Davies-Meyer, Matyas-Meyer-Oseas, and Miyaguchi-Preneel</a>).</li>
+</ul>
+Importance of the padding 10^* (see <a class="hlink" href=https://eprint.iacr.org/2009/325.pdf>here</a> for details).<br>
+Short summary of hash functions: 
+<ul>
+	<li> <a class="hlink" href=https://en.wikipedia.org/wiki/MD4>MD4</a> (completely broken) and <a class="hlink" href=https://en.wikipedia.org/wiki/MD5>MD5</a> (easy to find collisions); </li>
+	<li> <a class="hlink" href=https://en.wikipedia.org/wiki/SHA-1>SHA-1</a> (first collisions computed in 2017); </li>
+	<li> <a class="hlink" href=https://en.wikipedia.org/wiki/SHA-2>SHA-2</a> (including SHA-256 and SHA-512); </li>
+	<li> <a class="hlink" href=https://en.wikipedia.org/wiki/SHA-3>SHA-3</a>. </li>
+</ul>
+How to set up the MAC?
+<ul>
+	<li> MAC(x, k_{aut}) := H(k_{aut}, x) (if H = Merkle-Damgaard construction, then it is trivial to generate a MAC. Indeed, let y = H(k_{aut},x). Then, MAC(x | x' , k_{aut}) = H(y, x') computed without knowning k_{aut}, just y);  </li>
+	<li> MAC(x, k_{aut}) := H(x, k_{aut}) (if H = Merkle-Damgaard construction, it is sufficient to find x and x' such that H(x) = H(x') (no key involved!) in order to find a collision in the MAC); </li>
+	<li> MAC(x, k_{aut}) := H(k_{aut}, x, k_{aut}) (still weak); </li>
+	<li> HMAC. </li>
+</ul>
+-->
+
+
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201130-hash.pdf>Hash functions</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201130-mac.pdf>Message authentication codes (MACs)</a></li>
+	</ul>
+<br>
+
+
+</li>
+
+
 
 </ul>
 
