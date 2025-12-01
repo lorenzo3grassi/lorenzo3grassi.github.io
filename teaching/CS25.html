@@ -700,10 +700,7 @@ Just for your knowledge: better stream ciphers exist! See the final portfolio fr
 
 
 <li>
-<b> 1 Dec 2025:</b> (to appear!)
-
-<!--
-Problem: stream ciphers do not provide authentication and integrity! <br>
+<b> 1 Dec 2025:</b> Problem: stream ciphers do not provide authentication and integrity! <br>
 
 Solution: Message Authentication Codes (MACs). <br>
 
@@ -714,7 +711,7 @@ In order to instantiate a MAC, we need a hash function, that is, a hash function
 </ul>
 A hash function that returns n bits can guarantee at most 2^n bits of security for (second) pre-image resistance and 2^{n/2} bits of security for collision resistance (due to the birthday paradox). <br>
 
-Merkle-Damgaard construction for setting up secure hash functions. Compression function {0,1}^{2n} -> {0,1}^n set up via e.g.:
+Merkle-Damgaard construction for setting up secure hash functions. (Public) Compression function {0,1}^{2n} -> {0,1}^n set up via e.g.:
 <ul>
 	<li> truncated permutation Trun(P(.)), where Trunc: {0,1}^{2n} -> {0,1}^n returns half of the input bits;</li>
 	<li> cipher (see <a class="hlink" href=https://en.wikipedia.org/wiki/One-way_compression_function>Davies-Meyer, Matyas-Meyer-Oseas, and Miyaguchi-Preneel</a>).</li>
@@ -732,9 +729,9 @@ How to set up the MAC?
 	<li> MAC(x, k_{aut}) := H(k_{aut}, x) (if H = Merkle-Damgaard construction, then it is trivial to generate a MAC. Indeed, let y = H(k_{aut},x). Then, MAC(x | x' , k_{aut}) = H(y, x') computed without knowning k_{aut}, just y);  </li>
 	<li> MAC(x, k_{aut}) := H(x, k_{aut}) (if H = Merkle-Damgaard construction, it is sufficient to find x and x' such that H(x) = H(x') (no key involved!) in order to find a collision in the MAC); </li>
 	<li> MAC(x, k_{aut}) := H(k_{aut}, x, k_{aut}) (still weak); </li>
-	<li> HMAC. </li>
+	<li> HMAC:= H(k_{aut},  H(k_{aut}, x)). </li>
 </ul>
--->
+
 
 
 <br>
@@ -748,6 +745,20 @@ How to set up the MAC?
 
 </li>
 
+<li>
+<b> 4 Dec 2025:</b> (to appear!)
+
+<!--
+
+-->
+<br>
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201203-block.pdf>Block ciphers</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201203-modes.pdf>Modes of operation</a></li>
+	</ul>
+<br>
 
 
 </ul>
