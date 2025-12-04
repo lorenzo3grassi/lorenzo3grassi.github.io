@@ -750,15 +750,15 @@ See the <a class="hlink" href=https://github.com/Kat-zorn/TikZ-LFSR/>LATEX packa
 </li>
 
 <li>
-<b> 4 Dec 2025:</b> (to appear!)
-<!--
-Definition of block cipher. <br>
+<b> 4 Dec 2025:</b> Definition of block cipher. <br>
 
-<a class="hlink" href=https://en.wikipedia.org/wiki/Substitution%E2%80%93permutation_network>Substitution-Permutation Network</a> (SPN) construction. <br>
+Details about <a class="hlink" href=https://en.wikipedia.org/wiki/Substitution%E2%80%93permutation_network>Substitution-Permutation Network</a> (SPN) construction. Example: <a class="hlink" href=https://www.iacr.org/archive/ches2007/47270450/47270450.pdf>PRESENT</a>.
+How to choose the S-Box? We look for a non-linear function that maximizes the non-linearity. Given F : {0,1}^n -> {0,1}, the non-linearity of F is defined as NL(F) := 1 - max_{G linear} |{x \in {0,1}^n | F(x) = G(x)}| / 2^n. E.g., given F(x_0, x_1, x_2, x_3) = x_0 + x_1 (linear), then NL(F) = 0. Given F(x_0, x_1, x_2, x_3) = x_0 + x_0 * x_1 * x_2 * x_3 (almost linear), then NL(F) = 1/16.
+<br>
 
 Feistel construction: invertible even if the round function is not invertible. <br>
 
-Data Encryption Standard (DES). Broken: 3-DES as possible replacement. <br>
+Data Encryption Standard (DES): see <a class="hlink" href=https://csrc.nist.gov/files/pubs/fips/46-3/final/docs/fips46-3.pdf>here</a> for more details. Broken: 3-DES as possible replacement. Match-in-the-Middle attack against 2-DES.<br>
 
 Modes of operation (for encryption of large messages): 
 <ul>
@@ -768,9 +768,6 @@ Modes of operation (for encryption of large messages):
 	<li> Counter mode (CTR). </li>
 </ul>
 
-
--->
-<br>
 <br>
 	Additional material (slides by prof. Tanja Lange):
 	<ul>
@@ -778,6 +775,25 @@ Modes of operation (for encryption of large messages):
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201203-modes.pdf>Modes of operation</a></li>
 	</ul>
 <br>
+</li>
+
+<li>
+<b> 8 Dec 2025:</b> (to appear!) <br> 
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201112-xgcd.pdf>Extended Euclidean algorithm (XGCD)</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201210-crt.pdf>Chinese remainder theorem</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201207-exp.pdf>Exponentiation</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201207-rsa-1.pdf>Schoolbook RSA</a></li>
+	</ul>
+<br>
+
+
+
+
+</li>
+
 
 
 </ul>
