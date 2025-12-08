@@ -812,13 +812,30 @@ Signature via RSA: key-generation, signature, verification. <br>
 
 <li>
 <b> 11 Dec 2025:</b> (to appear!) <br> 
+
+
+<!-- Cost of factorization: O(e^{(a * (log(n) * (loglog(n))^2)^{1/3}}) via <a class="hlink" href=https://en.wikipedia.org/wiki/General_number_field_sieve> General number field sieve</a> -> size of n for security (<a class="hlink" href=https://en.wikipedia.org/wiki/RSA_Factoring_Challenge> factorization challenges</a>).<br>
+
+Problems with Schoolbook RSA:
+<ul>
+	<li> small exponent: no modulo reduction! Choose e.g. e = 2^16 + 1;</li>
+	<li> attack if the attacker knows c_1 and c_2 where m2 = a * m1 + b for known a,b; </li>
+	<li> attack if the attacker knows encryption of same message under several secret key (but same exponent e);</li>
+	<li> RSA is deterministic and homomorphic: *not* IND-CPA/-CCA1/-CCA2 secure!</li>
+	<li> signature RSA: trivial to generate valid signatures. (<i>Important</i>: it is sufficient to sign the hash value of the message H(m) rather than the full message!).</li>
+</ul>
+
+Solutions: RSA PKCS#1 v1.5 and <a class="hlink" href=https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding>OAEP</a>.
+<br>
+-->
+
 <br>
 	Additional material (slides by prof. Tanja Lange):
 	<ul>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201207-rsa-2.pdf>Problems with Schoolbook RSA I</a></li>
-	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201207-rsa-3.pdf>Problems with Schoolbook RSA II</a></li>
-	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201207-rsa-4.pdf>Problems with Schoolbook RSA III</a></li>
-	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201207-rsa-5.pdf>Attacks on RSA</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201210-rsa-3.pdf>Problems with Schoolbook RSA II</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201210-rsa-4.pdf>Problems with Schoolbook RSA III</a></li>
+	<!-- <li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-rsa-5.pdf>Attacks on RSA</a></li> -->
 	</ul>
 <br>
 
