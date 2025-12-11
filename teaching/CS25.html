@@ -811,23 +811,25 @@ Signature via RSA: key-generation, signature, verification. <br>
 </li>
 
 <li>
-<b> 11 Dec 2025:</b> (to appear!) <br> 
-
-
-<!-- Cost of factorization: O(e^{(a * (log(n) * (loglog(n))^2)^{1/3}}) via <a class="hlink" href=https://en.wikipedia.org/wiki/General_number_field_sieve> General number field sieve</a> -> size of n for security (<a class="hlink" href=https://en.wikipedia.org/wiki/RSA_Factoring_Challenge> factorization challenges</a>).<br>
+<b> 11 Dec 2025:</b> 
+<!-- Cost of factorization: O(e^{(a * (log(n) * (loglog(n))^2)^{1/3}}) via <a class="hlink" href=https://en.wikipedia.org/wiki/General_number_field_sieve> General number field sieve</a> -> size of n for security (<a class="hlink" href=https://en.wikipedia.org/wiki/RSA_Factoring_Challenge> factorization challenges</a>).<br> -->
 
 Problems with Schoolbook RSA:
 <ul>
 	<li> small exponent: no modulo reduction! Choose e.g. e = 2^16 + 1;</li>
-	<li> attack if the attacker knows c_1 and c_2 where m2 = a * m1 + b for known a,b; </li>
+	<li> if the attacker knows c_1 and c_2 where m2 = a * m1 + b for known a,b, it is possible to recover the message; </li>
 	<li> attack if the attacker knows encryption of same message under several secret key (but same exponent e);</li>
-	<li> RSA is deterministic and homomorphic: *not* IND-CPA/-CCA1/-CCA2 secure!</li>
-	<li> signature RSA: trivial to generate valid signatures. (<i>Important</i>: it is sufficient to sign the hash value of the message H(m) rather than the full message!).</li>
+	<li> RSA is deterministic and homomorphic (that is, Enc(m*m') = Enc(m) * Enc(m')): *not* IND-CPA/-CCA1/-CCA2 secure!</li>
+	<li> signature RSA: trivial to generate valid signatures (given s, the pair (m=s^e, s) corresponds to a valid signature, even if the attacker has no control on m). To avoid this problem:
+	<ul>
+	<li> pad the message as m|0^c for a certain c (where 0^c = 00...0 of length c). The probability that s^e satisfies this padding is 2^{-c}, so very low for e.g. c=128; </li>
+	<li> sign the hash of the message, that is, s := (H(x))^d. For the forgery, the attacker has to find m s.t. H(m) = s^e, that is, the attacker has to break the hash (which is infeasible!).</li>
+	</ul>
+ (<i>Important</i>: always sign the hash value of the message H(m) rather than the full message!)</li>
 </ul>
 
 Solutions: RSA PKCS#1 v1.5 and <a class="hlink" href=https://en.wikipedia.org/wiki/Optimal_asymmetric_encryption_padding>OAEP</a>.
 <br>
--->
 
 <br>
 	Additional material (slides by prof. Tanja Lange):
@@ -841,6 +843,21 @@ Solutions: RSA PKCS#1 v1.5 and <a class="hlink" href=https://en.wikipedia.org/wi
 
 </li>
 
+<li>
+<b> 15 Dec 2025:</b> (to appear!) <br> 
+
+
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-rsa-5.pdf>Attacks on RSA</a></li> 
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-dh.pdf>Diffie-Hellman key exchange</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-bsgs.pdf>Baby-stp giant-step attack</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201217-bsgs-2.pdf>Example for BSGS</a></li>
+	</ul>
+<br>
+
+</li>
 
 
 </ul>
