@@ -371,10 +371,22 @@ You can find the keys for the TAs linked above.<br>
 </p>
 
 <p>
-Date of the Exam (TBC): Monday January 26, 2026 (9am-12pm).
+Date of the exam: Monday January 26, 2026 (9am-12pm).
 </p>
 
+<u> Important rules for the exam:</u> Make sure to justify your answers in detail and to give clear arguments.
+Document all steps and intermediate results, in particular of algorithms, on
+the exam paper, do not use the scrap paper. It is not sufficient to state the
+correct result without the explanation and the steps that lead to it.
+If the problem statement asks for usage of a particular algorithm other solutions
+will not be accepted even if they give the correct result.<br>
 
+All answers must be submitted on TU/e letterhead; should you require more
+sheets ask the proctor. State your name on every sheet.
+Do <b>not</b> write in red or with a pencil.
+You are <b>not</b> allowed to use any books, notes, or other material.
+ <i>You are allowed to use a simple, non-programmable calculator without networking
+abilities. Usage of laptops and cell phones is *forbidden*.</i>
 
 
 
@@ -812,8 +824,6 @@ Signature via RSA: key-generation, signature, verification. <br>
 
 <li>
 <b> 11 Dec 2025:</b> 
-<!-- Cost of factorization: O(e^{(a * (log(n) * (loglog(n))^2)^{1/3}}) via <a class="hlink" href=https://en.wikipedia.org/wiki/General_number_field_sieve> General number field sieve</a> -> size of n for security (<a class="hlink" href=https://en.wikipedia.org/wiki/RSA_Factoring_Challenge> factorization challenges</a>).<br> -->
-
 Problems with Schoolbook RSA:
 <ul>
 	<li> small exponent: no modulo reduction! Choose e.g. e = 2^16 + 1;</li>
@@ -844,8 +854,26 @@ Solutions: RSA PKCS#1 v1.5 and <a class="hlink" href=https://en.wikipedia.org/wi
 </li>
 
 <li>
-<b> 15 Dec 2025:</b> (to appear!) <br> 
+<b> 15 Dec 2025:</b> Primality tests:
+<ul>
+<li> Fermat: a^{n-1} != 1 mod n for gcd(a,n)=1 -> n is not prime. Note: this is a necessary condition only! E.g., given n = 341 = 11 * 31, then 2^340 = 1 mod 341, but n is obviously not prime. Similar for n = 561; </li>
+<li> <a class="hlink" href=https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test>Miller Rabin</a>: let n = 1 + 2^s * d. n is said "strong <i>probable</i> prime" if a^d = 1 mod n, or if a^{2^r * d} = -1 mod n for some 0 <= r < s. Same considerations as before (check n = 221 = 13 * 17 = 1 + 2^2 * 55, with a = 174: 174^55 = 47, and 174^{2*55} = -1 mod 221).</li>
+</ul>
 
+Cost of factorization: O(e^{(a * (log(n) * (loglog(n))^2)^{1/3}}) via <a class="hlink" href=https://en.wikipedia.org/wiki/General_number_field_sieve> General number field sieve</a> -> size of n for security: e^{(a * (log(n) * (loglog(n))^2)^{1/3} >= 2^k for k-bit of security (<a class="hlink" href=https://en.wikipedia.org/wiki/RSA_Factoring_Challenge> factorization challenges</a>).<br>
+
+p-1 Method: gcd(a^{p-1}-1, n) = p but p-1 is unknown. If p-1 has small factors, consider gcd(a^s,n) for s = lcm{1,2,...,B} for some B >= 2. <br>
+
+Diffie-Hellman key-exchange. Let (Z_p, *) be a group with generator g (note: g^{p-1} = 1 mod p, and g^l != 1 mod p for each 0 < l < p-1). Alice chooses a, computes hA = g^a; Bob chooses b, computes hB = g^b. hA and hB are exchanged. Alice computes hBA = (hB)^a and Bob computes hAB = (hA)^b. Note that hAB = hBA. Set up the symmetric key as k = Hash(g, hA, hB, hAB). <br>
+
+Security of Diffie-Hellman:
+<ul>
+	<li> Decisional Diffie-Hellman problem (DDHP); </li>
+	<li> Computational Diffie-Hellman problem (CDHP); </li>
+	<li> Discrete Logarithm problem (DLP). </li>
+</ul>
+Note: DLP -> CDHP -> DDHP.
+<br>
 
 <br>
 	Additional material (slides by prof. Tanja Lange):
@@ -857,6 +885,26 @@ Solutions: RSA PKCS#1 v1.5 and <a class="hlink" href=https://en.wikipedia.org/wi
 	</ul>
 <br>
 
+</li>
+
+<li>
+<b> 18 Dec 2025:</b> (to appear!) <br> 
+
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-bsgs.pdf>Baby-stp giant-step attack</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201217-bsgs-2.pdf>Example for BSGS</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20210104-sharing.pdf>Shamir secret sharing</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-elgamal.pdf>ElGamal encryption and signature</a></li>
+	</ul>
+<br>
+
+
+</li>
+
+<li>
+<b> 5 Jan 2026: <u>NO LECTURE!</u></b>
 </li>
 
 
