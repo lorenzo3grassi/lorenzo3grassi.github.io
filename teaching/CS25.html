@@ -880,7 +880,7 @@ Note: DLP -> CDHP -> DDHP.
 	<ul>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-rsa-5.pdf>Attacks on RSA</a></li> 
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-dh.pdf>Diffie-Hellman key exchange</a></li>
-	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-bsgs.pdf>Baby-stp giant-step attack</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-bsgs.pdf>Baby-step giant-step attack</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201217-bsgs-2.pdf>Example for BSGS</a></li>
 	</ul>
 <br>
@@ -888,12 +888,25 @@ Note: DLP -> CDHP -> DDHP.
 </li>
 
 <li>
-<b> 18 Dec 2025:</b> (to appear!) <br> 
+<b> 18 Dec 2025:</b> Cost of discrete-logarithm: O(e^{(a * (log(n) * (loglog(n))^2)^{1/3}}) via <a class="hlink" href=https://link.springer.com/article/10.1007/BF01840433> Coppersmith algorithm</a> (similar to RSA). <br>
+
+Baby-step giant-step attack: how to find the discrete logarithm in time O(n^{1/2}). <br>
+
+Shamir secret sharing (n,k): splits a secret S into n parts, distributing them among n different participants, such that k of them are sufficient for recovering it. Idea:
+<ul>
+	<li> let F(x) be a polynomial function of degree k-1 such that F(0) = S;</li> 
+	<li> compute and distribute (i, F(i)) for n different integers i >= 1; </li>
+	<li> participants: use Lagrange interpolation polynomial to find F, and so S. </li>
+</ul> 
+
+ElGamal encryption: key-generation, encryption, and decryption.
+
+<br>
 
 <br>
 	Additional material (slides by prof. Tanja Lange):
 	<ul>
-	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-bsgs.pdf>Baby-stp giant-step attack</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-bsgs.pdf>Baby-step giant-step attack</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201217-bsgs-2.pdf>Example for BSGS</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20210104-sharing.pdf>Shamir secret sharing</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-elgamal.pdf>ElGamal encryption and signature</a></li>
@@ -904,8 +917,24 @@ Note: DLP -> CDHP -> DDHP.
 </li>
 
 <li>
-<b> 5 Jan 2026: <u>NO LECTURE!</u></b>
+<b> 5 Jan 2026: <u>NO LECTURE!</u></b><br><br>
 </li>
+
+<li>
+<b> 8 Jan 2026:</b> (to appear!) <br> 
+
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-elgamal.pdf>ElGamal encryption and signature</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201217-dlp.pdf>Hardness of DLP, DDHP, CDHP</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20210104-kem-dem.pdf>KEM-DEM framework</a></li>
+	</ul>
+<br>
+
+
+</li>
+
 
 
 </ul>
