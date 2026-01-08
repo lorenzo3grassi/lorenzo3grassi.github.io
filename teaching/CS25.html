@@ -919,21 +919,57 @@ ElGamal encryption: key-generation, encryption, and decryption.
 </li>
 
 <li>
-<b> 8 Jan 2026:</b> (to appear!) <br> 
+<b> 8 Jan 2026:</b> ElGamal signature scheme: key-generation, signature, and verification. Security of ElGamal signature scheme.<br>
 
+ElGamal in practice: let q | (p-1) be a prime of size 160 bits. Set up ElGamal encryption/signature via a generator g of order q. <br>
+
+Decisional DHP (DDHP): given g, g^a, g^b, g^c, decide if g^{a*b} = g^c or not. If g has order p-1, we can solve it, by working with the parity of a, b, and c. Note that g^((p-1)/2) =  - 1. And (g^a)^((p-1)/2) = 1 if a even, and -1 if a odd. Moreover, parity(a*b) = odd if a & b odd, and even otherwise. Finally, if c = a*b, then parity(c)=parity(a*b). Otherwise, Prob(parity(c)=parity(a*b))=1/2. By combining all these observations, it is possible to break DDHP.
+<br>
+
+How to avoid this problem? If p = 2*p'+1 for p' prime, choose a generator g of ord(g)=(p-1)/2.
+
+<br>
+
+How does it affect the security of ElGamal? If an attacker can break DDHP, then ElGamal is *not* IND-CPA. Indeed, note that c/m_0 = beta^l=g^{d*l} if b = 0, and beta^l * m_1/m_0 = g^{d*l} * m_1/m_0. Solve the DDHP given by (g, beta = g^d, r = g^l, c/m_0) to decide if b = 0 or not.
+
+<br>
+
+Note: ElGamal is *not* IND-CCA2 as it is homomorphic. Indeed, given (r_1 = g^{l_1}, beta^{l_1} * m_1) and (r_2 = g^{l_2}, beta^{l_2} * m_2), then (r_1 * r_2 = g^{l_1+l_2}, beta^{l_1+l_2} * m_1 * m_2) is a valid ciphertext of m_1*m_2.
+
+<br><br>
+
+
+Please, complete the survey: <a class="hlink" href=/teaching/CS25/Q2_course_evaluation_2025-2026.pptx>course evaluation</a>. 
+
+<br>
 <br>
 	Additional material (slides by prof. Tanja Lange):
 	<ul>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201214-elgamal.pdf>ElGamal encryption and signature</a></li>
 	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20201217-dlp.pdf>Hardness of DLP, DDHP, CDHP</a></li>
-	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20210104-kem-dem.pdf>KEM-DEM framework</a></li>
 	</ul>
 <br>
 
 
 </li>
 
+<li>
+<b> 12 Jan 2026 (last lecture):</b>  (to appear!) <br> 
 
+<br>
+	Additional material (slides by prof. Tanja Lange):
+	<ul>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20210104-kem-dem.pdf>KEM-DEM framework</a></li>
+	<li> <a class="hlink" href=https://www.hyperelliptic.org/tanja/teaching/CS20/slides/20210107-auth-dh.pdf>Authenticated key agreement
+</a></li>
+	</ul>
+<br>
+
+</li>
+
+<li>
+<b> 15 Jan 2026 (13.30 - 15.30):</b> TAs will answer any question about course/previous exams - location: AUD02.
+</li>
 
 </ul>
 
