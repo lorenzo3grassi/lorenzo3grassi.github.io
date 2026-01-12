@@ -40,7 +40,7 @@ li{margin-bottom:5px;}
 <br><table width=90% align=center><br>
 
 
-<tr align=center><td width=90% align=center><font class="kop1">Introduction to Cryptology (2WF80) <br> Q2, 2025/2026</font></td></tr>
+<tr align=center><td width=90% align=center><font class="kop1">Introduction to Cryptology (2MBD60) <br> Q2, 2025/2026</font></td></tr>
 
 
 </table>
@@ -393,7 +393,7 @@ abilities. Usage of laptops and cell phones is *forbidden*.</i>
 <a name="old"></a>
 <h4>Old Exams</h4>
 <p>
-This course was given for the first time in Q2 of 2014. Old exams are listed here.</p>
+This course was given for the first time in Q2 of 2014. Old exams are listed here (solutions are not - and will not be - provided).</p>
 
 <ul>
 <li>
@@ -954,7 +954,16 @@ Please, complete the survey: <a class="hlink" href=/teaching/CS25/Q2_course_eval
 </li>
 
 <li>
-<b> 12 Jan 2026 (last lecture):</b>  (to appear!) <br> 
+<b> 12 Jan 2026 (last lecture):</b> as we saw in the last lecture, ElGamal encryption is homomorphic. A possible way to destroy such property is by using a hash function: c = Hash(beta^l, beta, r) * m -> m = c / Hash(r^d, beta, r). <br>
+
+KEM-DEM: Key Encapsulation Mechanism + Data Encapsulation Mechanism. Combination of public-key encryption (= KEM) and symmetric-key encryption (= DEM). Alice and Bob share a secret key K by using a PKC turned into a KEM. Then, they use a symmetric cipher (e.g., AES) instantiated with K to share the data in a confidential way.
+<br>
+
+Problem: any public-key encryption scheme is vulnerable to a <a class="hlink" href=https://en.wikipedia.org/wiki/Man-in-the-middle_attack>Man-in-the-Middle attack</a>. Concrete example with Diffie-Hellman. <br>
+
+The <a class="hlink" href=https://en.wikipedia.org/wiki/Needham%E2%80%93Schroeder_protocol>Needham-Schroeder authentication protocol</a> provides a solution to this problem. A key ingredient is a server trusted by both parties. 
+The Needham-Schroeder Symmetric Key Protocol is based on a symmetric encryption algorithm, and forms the basis for the Kerberos protocol. 
+The Needham-Schroeder Public-Key Protocol is based on public-key cryptography, and it is intended to provide mutual authentication between two parties communicating on a network.<br>
 
 <br>
 	Additional material (slides by prof. Tanja Lange):
@@ -968,7 +977,7 @@ Please, complete the survey: <a class="hlink" href=/teaching/CS25/Q2_course_eval
 </li>
 
 <li>
-<b> 15 Jan 2026 (13.30 - 15.30):</b> TAs will answer any question about course/previous exams - location: AUD02.
+<b> 15 Jan 2026 (13.30 - 15.30):</b> TAs will answer any specific question about the course/previous exams - location: AUD02.  
 </li>
 
 </ul>
